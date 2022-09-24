@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/userdash.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/user/dashboard" class="active">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/user/bot/<%= UId %>">
+            <span class="material-icons-sharp">smart_toy</span>
+            <h3>Your BOT</h3>
+          </a>
+          <a href="/user/pricing/<%= UId %>">
+            <span class="material-icons-sharp"> request_quote</span>
+            <h3>Pricing</h3>
+          </a>
+          <a href="/user/profile/<%= UId %>">
+            <span class="material-icons-sharp">person</span>
+            <h3>Profile</h3>
+          </a>
+          <% if (AdminButton) {%>
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+            <span class="message-count"><%= allwaitingpackage %></span>
+          </a>
+          <% } %>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Dashboard</h1>
+        <div class="insights">
+          <div class="spot-balance">
+            <span class="material-icons-sharp">attach_money</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Spot Balance</h3>
+                <h1>Coming Soon</h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF SPOT BALANCE-->
+          <div class="future-balance">
+            <span class="material-icons-sharp">attach_money</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Future Balance</h3>
+                <h1>Coming Soon</h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF FUTURE BALANCE -->
+          <div class="total-balance">
+            <span class="material-icons-sharp">account_balance</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Balance</h3>
+                <h1>Coming Soon</h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF TOTAL BALANCE -->
+          <div class="growth">
+            <span class="material-icons-sharp">insights</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Growth</h3>
+                <h1>Coming Soon</h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF GROWTH -->
+        </div>
+        <div class="recent">
+          <table>
+            <thead>
+              <tr>
+                <th>Account Type</th>
+                <th>ID Order</th>
+                <th>Pairs</th>
+                <th>Position</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+                <td>Coming Soon</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UranusQ</title>
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="font awesome/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <form method="post" action="/auth/user/login">
+        <h1>Login</h1>
+        <input type="email" placeholder="Email" name="email" required />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+        />
+        <button class="btn-form" type="submit">Login</button>
+        <a href="/auth/register">Create account</a>
+      </form>
+    </div>
+  </body>
+</html>

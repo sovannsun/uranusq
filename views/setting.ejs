@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/setting.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/admin/management">
+            <span class="material-icons-sharp">manage_accounts</span>
+            <h3>Management</h3>
+          </a>
+          <a href="/admin/billing">
+            <span class="material-icons-sharp">payments</span>
+            <h3>Billing</h3>
+            <span class="message-count"><%= allwaitingpackage %></span>
+          </a>
+          <a href="/admin/setting" class="active">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Setting</h3>
+          </a>
+          <a href="/admin/admin">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+          </a>
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp">manage_accounts</span>
+            <h3>User Account</h3>
+          </a>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Setting</h1>
+        <div class="setting"></div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

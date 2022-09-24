@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UranusQ</title>
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="font awesome/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Section -->
+    <nav>
+      <h2 class="logo">Uranus<span>Q</span></h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#package">Package</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#about-us">About Us</a></li>
+      </ul>
+      <% if (loggedIn) {%>
+      <button class="btn-login"><a href="/auth/user/logout">Logout</a></button>
+      <% } %> <% if (!loggedIn) {%>
+      <button class="btn-login"><a href="/auth/login">Login</a></button>
+      <% } %>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="content">
+        <h1 class="colorful">Smart Crypto<br />Trading Bots</h1>
+        <h3>
+          The ultimate tools for crypto trading bots <br />to maximize trading
+          profits while minimizing risk and loss.
+        </h3>
+        <button class="btn-registernow">
+          <a href="/auth/register">Register Now</a>
+        </button>
+      </div>
+    </div>
+    <!-- Coin Price Section -->
+    <section class="coinprice-section">
+      <div class="coinprice-title">
+        <h1>Today's Cryptocurrency <span>Prices</span></h1>
+      </div>
+      <div class="coinprice-container">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/"
+              rel="noopener"
+              target="_blank"
+              ><span class="blue-text">Cryptocurrency Markets</span></a
+            >
+            by TradingView
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+            async
+          >
+              {
+              "width": "100%",
+              "height": "100%",
+              "defaultColumn": "overview",
+              "screener_type": "crypto_mkt",
+              "displayCurrency": "USD",
+              "colorTheme": "light",
+              "locale": "en"
+            }
+          </script>
+          <style>
+            .tradingview-widget-copyright {
+              display: none !important;
+            }
+          </style>
+        </div>
+        <!-- TradingView Widget END -->
+        <!-- <div class="coin-price">
+          <div class="logo"><img src="img/BTC.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>BTC</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/ETH.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>ETH</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/BNB.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>BNB</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/ADA.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>ADA</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/XRP.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>XRP</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/SOL.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>SOL</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/DOGE.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>DOGE</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/DOT.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>DOT</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/WBTC.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>WBTC</h1>
+          </div>
+        </div>
+        <div class="coin-price">
+          <div class="logo"><img src="img/TRX.png" /></div>
+          <div>
+            <h1>$000</h1>
+            <h1>TRX</h1>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- Content One Section -->
+    <section class="contentone-section" id="about-us">
+      <div class="content-container">
+        <div class="first-column">
+          <div class="conten-box-title">
+            <h1>We make trading</h1>
+            <h1 class="second-h1 colorful">simple & comfortable!</h1>
+          </div>
+          <p>
+            UranusQ is a trading bots that helps you do business on crypto
+            market exchanges since 2017. We've created a clear and transparent
+            system that conducts transactions according to the parameters you
+            set, and we have connected investment tools and financial protection
+            algorithms to it.
+          </p>
+        </div>
+        <div class="second-column">
+          <p>
+            <span>&laquo;</span>Our users trade on exchanges and automatically
+            get profit using our trading bots, without wasting time on tracking
+            quotes.<span>&raquo;</span>
+          </p>
+          <h1>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star-half-stroke"></i>
+          </h1>
+          <h3>Excellent, 19565 REVIEWS ON</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Bitcoin Section -->
+    <section class="bitcoin-section">
+      <div class="first-column">
+        <div class="upperbox">
+          <div class="line"></div>
+          <h1 class="colorful">Using Our Trading Bots</h1>
+        </div>
+        <div class="lowerbox">
+          <div class="leftbox">
+            <h1>10-30%</h1>
+            <h3>Profitalbe</h3>
+          </div>
+          <div class="rightbox">
+            <h1>500 Thousand</h1>
+            <h3>Average monthly profit</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Two Section -->
+    <section class="contenttwo-section">
+      <div class="img-box">
+        <img src="img/trade-bot.svg" />
+      </div>
+      <div class="right-box-text">
+        <h1>Trading Bots for traders of <span>all levels</span></h1>
+        <p>
+          Earn passive income and autonomously hedge your position with
+          additional daily profits via one of our many-winning bots.
+        </p>
+        <button class="btn-registernow">
+          <a href="/auth/register">Register Now</a>
+        </button>
+      </div>
+    </section>
+    <!-- RapterX Section -->
+    <section class="rapterx-section">
+      <div class="background-image">
+        <div class="rapterx-upper-box">
+          <div class="rapterx-title">
+            <h1>RapterX</h1>
+            <h3>Full Version 2.5</h3>
+          </div>
+          <div class="rapterx-textbox">
+            <h3>Automatic Bot Trading</h3>
+            <h1>Intelligent Trading System</h1>
+          </div>
+        </div>
+        <div class="rapterx-lower-box">
+          <div class="sub-box">
+            <div class="rapterx-check-box">
+              <p class="check"><i class="fa-solid fa-circle-check"></i></p>
+              <p class="text">
+                Can be used in all currencies and all market conditions
+              </p>
+            </div>
+            <div class="rapterx-check-box">
+              <p class="check"><i class="fa-solid fa-circle-check"></i></p>
+              <p class="text">
+                Use the principle of Re-balance to balance the ports to keep
+                growing
+              </p>
+            </div>
+          </div>
+          <div class="sub-box">
+            <div class="rapterx-check-box">
+              <p class="check"><i class="fa-solid fa-circle-check"></i></p>
+              <p class="text">
+                Feature profitalbe in the Spot market even download
+              </p>
+            </div>
+            <div class="rapterx-check-box">
+              <p class="check"><i class="fa-solid fa-circle-check"></i></p>
+              <p class="text">
+                Feature Price Reverse can be profitalbe at the price reversal.
+              </p>
+            </div>
+          </div>
+          <div class="sub-box">
+            <div class="rapterx-check-box">
+              <p class="check"><i class="fa-solid fa-circle-check"></i></p>
+              <p class="text">
+                Intelligent feature can turn off profits, flexible. Focus on
+                safety
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Intelligent Systems Section -->
+    <section class="Intelligent-Systems">
+      <div class="Rapterx-header">
+        <div class="rapterx-name">
+          <h1>RapterX</h1>
+          <h3>Full Version 2.5</h3>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="next-text">
+          <h1>Intelligent Systems</h1>
+        </div>
+      </div>
+      <div class="contentthree-section">
+        <div class="sell-bitcion">
+          <div class="sell-bitcoin-text">
+            <h1>Sell Bitcoin</h1>
+            <h3>Befor the market gose down with</h3>
+            <h3><span>intelligent systems</span></h3>
+          </div>
+          <div class="sell-bitcoin-img">
+            <img src="img/sell-history.svg" />
+          </div>
+        </div>
+        <div class="buy-bitcoin">
+          <div class="buy-bitcoin-img">
+            <img src="img/buy-history.svg" />
+          </div>
+          <div class="buy-bitcoin-text">
+            <h1>Buy Bitcoin</h1>
+            <h3>with <span>Automatically systems</span></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Table Price Section -->
+    <section class="table-price-section" id="package">
+      <h1 class="title">Choose a plan</h1>
+      <div class="toggle-switch">
+        <span class="toggle-text">Monthly</span>
+        <input type="checkbox" class="toggler" />
+        <span class="toggle-text">Yearly</span>
+      </div>
+      <div class="cards">
+        <div class="card" id="card-1">
+          <h1 class="card-title">Spot Bot</h1>
+          <p>RapterX [Spot Bot]</p>
+          <h2 class="card-price" id="spot-price">$200<span>/Yearly</span></h2>
+          <div class="cart-plane">
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">RapterX [Spot Bot]</h4>
+            </div>
+            <p class="un-cu">Group SA BTC ETH BNB</p>
+            <p class="un-cu">Group SB BTC ETH BNB</p>
+            <p class="un-cu">GALA SAND ADA</p>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">Protect on VP Cloud</h4>
+            </div>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">API Protected</h4>
+            </div>
+          </div>
+          <% if (!loggedIn) {%>
+          <button type="button" class="btn-get-now">
+            <a href="/auth/register">Get Now</a>
+          </button>
+          <% } %> <% if (loggedIn) {%>
+          <button type="button" class="btn-get-now">
+            <a href="/user/pricing">Get Now</a>
+          </button>
+          <% } %>
+          <p>Annual Service Fee</p>
+        </div>
+        <div class="card" id="card-2">
+          <h1 class="card-title">FUTURE Bot</h1>
+          <p>COBRA [Future Bot]</p>
+          <h2 class="card-price" id="future-price">$300<span>/Yearly</span></h2>
+          <div class="cart-plane">
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">RapterX [Spot Bot]</h4>
+            </div>
+            <p class="un-cu">Group SA BTC ETH BNB</p>
+            <p class="un-cu">Group SB BTC ETH BNB</p>
+            <p class="un-cu">GALA SAND ADA</p>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">Protect on VP Cloud</h4>
+            </div>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">API Protected</h4>
+            </div>
+          </div>
+          <% if (!loggedIn) {%>
+          <button type="button" class="btn-get-now">
+            <a href="/auth/register">Get Now</a>
+          </button>
+          <% } %> <% if (loggedIn) {%>
+          <button type="button" class="btn-get-now">
+            <a href="/user/pricing">Get Now</a>
+          </button>
+          <% } %>
+          <p>Annual Service Fee</p>
+        </div>
+        <div class="card active" id="card-3">
+          <h1 class="card-title">Membership</h1>
+          <p>Unlimited access bot</p>
+          <h2 class="card-price" id="member-price">$400<span>/Yearly</span></h2>
+          <div class="cart-plane">
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">RapterX [Spot Bot]</h4>
+            </div>
+            <p class="un-cu">Unlimited Currencies</p>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">COBRA [Future Bot]</h4>
+            </div>
+            <p class="un-cu">Unlimited Currencies</p>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">DCA ATR [Spot Bot]</h4>
+            </div>
+            <p class="un-cu">Unlimited Currencies</p>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">Protect on VP Cloud</h4>
+            </div>
+            <div class="cart-list">
+              <h4 class="card-check-mark">
+                <i class="fa-solid fa-circle-check"></i>
+              </h4>
+              <h4 class="text-font">API Protected</h4>
+            </div>
+          </div>
+          <% if (!loggedIn) {%>
+          <button type="button" class="btn-get-now btn-active">
+            <a href="/auth/register">Get Now</a>
+          </button>
+          <% } %> <% if (loggedIn) {%>
+          <button type="button" class="btn-get-now btn-active">
+            <a href="/user/pricing">Get Now</a>
+          </button>
+          <% } %>
+          <p>Annual Service Fee</p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container" id="contact-us">
+        <div class="footer-leftbox">
+          <h1>Get In Touch</h1>
+          <p>Contact information</p>
+          <div class="socialbox">
+            <a href="https://web.facebook.com/uranusq.thailand"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://t.me/+sjbUxu9D8r5lMWFl"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-rightbox">
+          <h1 class="colorful">Scan QRCode to Contact Us</h1>
+          <div class="qrbox">
+            <div class="qr-left">
+              <img src="img/uranusq-cam-tele-qr.png" />
+            </div>
+            <div class="qr-right">
+              <h3>
+                Let us know how we can help and set up a time to chat with us!
+              </h3>
+              <button class="btn-uranusqe"><a href="#">@UranusQ</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

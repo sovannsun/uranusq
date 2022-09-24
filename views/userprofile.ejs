@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/userprofile.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/user/bot/<%= UId %>">
+            <span class="material-icons-sharp">smart_toy</span>
+            <h3>Your BOT</h3>
+          </a>
+          <a href="/user/pricing/<%= UId %>">
+            <span class="material-icons-sharp"> request_quote</span>
+            <h3>Pricing</h3>
+          </a>
+          <a href="/user/profile/<%= UId %>" class="active">
+            <span class="material-icons-sharp">person</span>
+            <h3>Profile</h3>
+          </a>
+          <% if (AdminButton) {%>
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+            <span class="message-count"><%= allwaitingpackage %></span>
+          </a>
+          <% } %>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>User Profile</h1>
+        <div class="user-pricing">
+          <div class="payment-container">
+            <div class="payment-card">
+              <div class="card">
+                <span class="material-icons-sharp">wifi</span>
+                <div class="card-footer">
+                  <div class="card-holder">
+                    <span>Card Holder</span>
+                    <span>Expires</span>
+                  </div>
+                  <div class="cart-type">
+                    <img src="/img/MasterCard.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <span class="material-icons-sharp">wifi</span>
+                <div class="card-footer">
+                  <div class="card-holder">
+                    <span>Card Holder</span>
+                    <span>Expires</span>
+                  </div>
+                  <div class="cart-type">
+                    <img src="/img/VisaCard-Logo.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="payment-method">
+              <div class="payment-header">
+                <div class="payment-title">
+                  <h3>Payment Method</h3>
+                </div>
+                <div class="add-newcard">
+                  <button>+ADD NEW CARD</button>
+                </div>
+              </div>
+              <div class="edit-card">
+                <div class="card-edit">
+                  <div class="card-inner">
+                    <img src="/img/MasterCard.png" alt="" />
+                    <h3>Comming Soon</h3>
+                  </div>
+                  <div class="edit-icon">
+                    <span class="material-icons-sharp">edit</span>
+                  </div>
+                </div>
+                <div class="card-edit">
+                  <div class="card-inner">
+                    <img src="/img/VisaCard-Logo.png" alt="" />
+                    <h3>Comming Soon</h3>
+                  </div>
+                  <div class="edit-icon">
+                    <span class="material-icons-sharp">edit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="summary-package">
+            <div class="package-header">
+              <h3>My Packages</h3>
+              <a href="#">VIEW ALL</a>
+            </div>
+            <div class="my-pakages">
+              <% if (locals.userpackage.length > 0) { %>
+                <table>
+                  <thead>
+                    <th>Package</th>
+                    <th>Life Time</th>
+                    <th>Expire Date</th>
+                    <th>Payment</th>
+                    <th>View</th>
+                  </thead>
+                  <% for(let i = 0; i <userpackage.length; i++) { %>
+                  <tbody>
+                    <tr>
+                      <td><%= userpackage[i].package %></td>
+                      <td><%= userpackage[i].packagelife %></td>
+                      <td><%= userpackage[i].expireDate %></td>
+                      <td><%= userpackage[i].payment %></td>
+                      <td><a href="/user/package/detail/<%= userpackage[i]._id %>"><span class="material-icons-sharp">visibility</span></a></td>
+                    </tr>
+                  </tbody>
+                  <% } %>
+                </table>
+              <% } else {%>
+                <p class="alert alert-warning">You do not have any packages!</p>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="user-detail">
+          <div class="user-content">
+            <h1>Profile Information</h1>
+            <table>
+              <tbody>
+                <tr>
+                  <td>User ID</td>
+                  <td><%= userprofile._id %></td>
+                </tr>
+                <tr>
+                  <td>First Name</td>
+                  <td><%= userprofile.firstname %></td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td><%= userprofile.lastname %></td>
+                </tr>
+                <tr>
+                  <td>Username</td>
+                  <td><%= userprofile.username %></td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><%= userprofile.email %></td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td><%= userprofile.phone %></td>
+                </tr>
+                <tr>
+                  <td>Line ID</td>
+                  <td><%= userprofile.lineid %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="user-content">
+            <h1>Connection Information</h1>
+            <table>
+              <tbody>
+                <tr>
+                  <td>RapterX Crypto Pairs</td>
+                  <td><%= userprofile.raptercryptopairs %></td>
+                </tr>
+                <tr>
+                  <td>RapterX Api Key</td>
+                  <td><%= userprofile.rapterapikey %></td>
+                </tr>
+                <tr>
+                  <td>RapterX Secret Key</td>
+                  <td><%= userprofile.raptersecretkey %></td>
+                </tr>
+                <tr>
+                  <td>Hydra Crypto Pairs</td>
+                  <td><%= userprofile.hydracryptopairs %></td>
+                </tr>
+                <tr>
+                  <td>Hydra Api Key</td>
+                  <td><%= userprofile.hydraapikey %></td>
+                </tr>
+                <tr>
+                  <td>Hydra Secret Key</td>
+                  <td><%= userprofile.hydrasecretkey %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

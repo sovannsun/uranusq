@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/userprice.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/user/bot/<%= UId %>">
+            <span class="material-icons-sharp">smart_toy</span>
+            <h3>Your BOT</h3>
+          </a>
+          <a href="/user/pricing/<%= UId %>" class="active">
+            <span class="material-icons-sharp"> request_quote</span>
+            <h3>Pricing</h3>
+          </a>
+          <a href="/user/profile/<%= UId %>">
+            <span class="material-icons-sharp">person</span>
+            <h3>Profile</h3>
+          </a>
+          <% if (AdminButton) {%>
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+            <span class="message-count"><%= allwaitingpackage %></span>
+          </a>
+          <% } %>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Pricing</h1>
+        <div class="your-bot-cover"></div>
+        <div class="package-price">
+          <div class="toggle-switch">
+            <span class="toggle-text">Monthly</span>
+            <input type="checkbox" class="toggler" />
+            <span class="toggle-text">Yearly</span>
+          </div>
+          <div class="package-container">
+            <div class="card" id="card-1">
+              <div class="card-header">
+                <h1 class="card-title">Spot Bot</h1>
+                <p>RapterX [Spot Bot]</p>
+                <h2 class="card-price" id="spot-price">
+                  $200<span>/Yearly</span>
+                </h2>
+              </div>
+              <div class="cart-plane">
+                <div class="inner-card-plane">
+                  <div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">RapterX [Spot Bot]</h4>
+                    </div>
+                    <p class="un-cu">Group SA BTC ETH BNB</p>
+                    <p class="un-cu">Group SB BTC ETH BNB</p>
+                    <p class="un-cu">GALA SAND ADA</p>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">Protect on VP Cloud</h4>
+                    </div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">API Protected</h4>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <form action="/auth/package/store" method="POST">
+                      <input
+                        type="hidden"
+                        name="typeof"
+                        id="typeof"
+                        value="Payment"
+                      />
+                      <input
+                        type="hidden"
+                        name="package"
+                        id="package"
+                        value="Spot Bot"
+                      />
+                      <input
+                        type="hidden"
+                        name="packagelife"
+                        id="packagelife1"
+                        value="Yearly"
+                      />
+                      <input
+                        type="hidden"
+                        name="payment"
+                        id="payment"
+                        value="Waiting"
+                      />
+                      <input
+                        type="hidden"
+                        name="status"
+                        id="status"
+                        value="Success"
+                      />
+                      <button
+                        type="submit"
+                        class="btn-get-now"
+                        onclick="return confirm('Would you like to buy this package?')"
+                      >
+                        Get Now
+                      </button>
+                    </form>
+                    <p>Annual Service Fee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" id="card-2">
+              <div class="card-header">
+                <h1 class="card-title">Future Bot</h1>
+                <p>COBRA [Future Bot]</p>
+                <h2 class="card-price" id="future-price">
+                  $300<span>/Yearly</span>
+                </h2>
+              </div>
+              <div class="cart-plane">
+                <div class="inner-card-plane">
+                  <div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">RapterX [Spot Bot]</h4>
+                    </div>
+                    <p class="un-cu">Group SA BTC ETH BNB</p>
+                    <p class="un-cu">Group SB BTC ETH BNB</p>
+                    <p class="un-cu">GALA SAND ADA</p>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">Protect on VP Cloud</h4>
+                    </div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">API Protected</h4>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <form action="/auth/package/store" method="POST">
+                      <input
+                        type="hidden"
+                        name="typeof"
+                        id="typeof"
+                        value="Payment"
+                      />
+                      <input
+                        type="hidden"
+                        name="package"
+                        id="package"
+                        value="Future Bot"
+                      />
+                      <input
+                        type="hidden"
+                        name="packagelife"
+                        id="packagelife2"
+                        value="Yearly"
+                      />
+                      <input
+                        type="hidden"
+                        name="payment"
+                        id="payment"
+                        value="Waiting"
+                      />
+                      <input
+                        type="hidden"
+                        name="status"
+                        id="status"
+                        value="Success"
+                      />
+                      <button
+                        type="submit"
+                        class="btn-get-now"
+                        onclick="return confirm('Would you like to buy this package?')"
+                      >
+                        Get Now
+                      </button>
+                    </form>
+                    <p>Annual Service Fee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card active" id="card-3">
+              <div class="card-header">
+                <h1 class="card-title">Membership</h1>
+                <p>Unlimited access bot</p>
+                <h2 class="card-price" id="member-price">
+                  $400<span>/Yearly</span>
+                </h2>
+              </div>
+              <div class="cart-plane">
+                <div class="inner-card-plane">
+                  <div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">RapterX [Spot Bot]</h4>
+                    </div>
+                    <p class="un-cu">Unlimited Currencies</p>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">COBRA [Future Bot]</h4>
+                    </div>
+                    <p class="un-cu">Unlimited Currencies</p>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">DCA ATR [Spot Bot]</h4>
+                    </div>
+                    <p class="un-cu">Unlimited Currencies</p>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">Protect on VP Cloud</h4>
+                    </div>
+                    <div class="cart-list">
+                      <span class="material-icons-sharp">check</span>
+                      <h4 class="text-font">API Protected</h4>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <form action="/auth/package/store" method="POST">
+                      <input
+                        type="hidden"
+                        name="typeof"
+                        id="typeof"
+                        value="Payment"
+                      />
+                      <input
+                        type="hidden"
+                        name="package"
+                        id="package"
+                        value="Membership"
+                      />
+                      <input
+                        type="hidden"
+                        name="packagelife"
+                        id="packagelife3"
+                        value="Yearly"
+                      />
+                      <input
+                        type="hidden"
+                        name="payment"
+                        id="payment"
+                        value="Waiting"
+                      />
+                      <input
+                        type="hidden"
+                        name="status"
+                        id="status"
+                        value="Success"
+                      />
+                      <button
+                        type="submit"
+                        class="btn-get-now"
+                        onclick="return confirm('Would you like to buy this package?')"
+                      >
+                        Get Now
+                      </button>
+                    </form>
+                    <p>Annual Service Fee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

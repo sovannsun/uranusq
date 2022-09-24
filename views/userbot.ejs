@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bot Management</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/userbot.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/user/bot/<%= UId %>" class="active">
+            <span class="material-icons-sharp">smart_toy</span>
+            <h3>Your BOT</h3>
+          </a>
+          <a href="/user/pricing/<%= UId %>">
+            <span class="material-icons-sharp"> request_quote</span>
+            <h3>Pricing</h3>
+          </a>
+          <a href="/user/profile/<%= UId %>">
+            <span class="material-icons-sharp">person</span>
+            <h3>Profile</h3>
+          </a>
+          <% if (AdminButton) {%>
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+            <span class="message-count"><%= allwaitingpackage %> </span>
+          </a>
+          <% } %>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Bot Management</h1>
+        <div class="your-bot-cover"></div>
+        <div class="your-bot">
+          <div class="bot-container">
+            <div class="bot-header">
+              <div class="onoff">
+                <p id="RapterXBot">OFF</p>
+              </div>
+              <div class="toggle-switch">
+                <input type="checkbox" class="toggler" id="togglerRapterXBot" />
+              </div>
+            </div>
+            <div class="bot-name" id="Rapbotactive">
+              <h3>RapterX Bot</h3>
+              <h2>Spot</h2>
+            </div>
+            <div class="input-container">
+              <form action="/user/bot/update" method="POST">
+                <input type="hidden" name="id" value="<%= spacialData._id %>" />
+                <input
+                  type="text"
+                  placeholder="Exchange"
+                  name="raptercryptopairs"
+                  value="<%= spacialData.raptercryptopairs %>"
+                />
+                <input
+                  type="text"
+                  placeholder="Api Key"
+                  name="rapterapikey"
+                  value="<%= spacialData.rapterapikey %>"
+                />
+                <input
+                  type="text"
+                  placeholder="Secret Key"
+                  name="raptersecretkey"
+                  value="<%= spacialData.raptersecretkey %>"
+                />
+                <button type="submit">SAVE AND RUN</button>
+              </form>
+            </div>
+          </div>
+          <div class="bot-container">
+            <div class="bot-header">
+              <div class="onoff">
+                <p id="HydraBot">OFF</p>
+              </div>
+              <div class="toggle-switch">
+                <input type="checkbox" class="toggler" id="togglerHydraBot" />
+              </div>
+            </div>
+            <div class="bot-name" id="Hydrabotactive">
+              <h3>Hydra Bot</h3>
+              <h2>Future</h2>
+            </div>
+            <div class="input-container">
+              <form action="/user/bot/update" method="POST">
+                <input type="hidden" name="id" value="<%= spacialData._id %>" />
+                <input
+                  type="text"
+                  placeholder="Exchange"
+                  name="hydracryptopairs"
+                  value="<%= spacialData.hydracryptopairs %>"
+                />
+                <input
+                  type="text"
+                  placeholder="Api Key"
+                  name="hydraapikey"
+                  value="<%= spacialData.hydraapikey %>"
+                />
+                <input
+                  type="text"
+                  placeholder="Secret Key"
+                  name="hydrasecretkey"
+                  value="<%= spacialData.hydrasecretkey %>"
+                />
+                <button type="submit">SAVE AND RUN</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/userbot.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

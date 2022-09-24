@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Package Details</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/userpackagedetail.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp"> home </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/user/bot/<%= UId %>">
+            <span class="material-icons-sharp">smart_toy</span>
+            <h3>Your BOT</h3>
+          </a>
+          <a href="/user/pricing/<%= UId %>">
+            <span class="material-icons-sharp"> request_quote</span>
+            <h3>Pricing</h3>
+          </a>
+          <a href="/user/profile/<%= UId %>" class="active">
+            <span class="material-icons-sharp">person</span>
+            <h3>Profile</h3>
+          </a>
+          <% if (AdminButton) {%>
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+            <span class="message-count"><%= allwaitingpackage %></span>
+          </a>
+          <% } %>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Package Details</h1>
+        <div class="user-package-detail">
+          <div class="user-info">
+            <h1>User Package Details</h1>
+            <table>
+              <tbody>
+                <tr>
+                  <td>User ID</td>
+                  <td><%= packagedetail.userid._id %></td>
+                </tr>
+                <tr>
+                  <td>First Name</td>
+                  <td><%= packagedetail.userid.firstname %></td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td><%= packagedetail.userid.lastname %></td>
+                </tr>
+                <tr>
+                  <td>Username</td>
+                  <td><%= packagedetail.userid.username %></td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><%= packagedetail.userid.email %></td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td><%= packagedetail.userid.phone %></td>
+                </tr>
+                <tr>
+                  <td>Line ID</td>
+                  <td><%= packagedetail.userid.lineid %></td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Order Number</td>
+                  <td><%= packagedetail._id %></td>
+                </tr>
+                <tr>
+                  <td>Package</td>
+                  <td><%= packagedetail.package %></td>
+                </tr>
+                <tr>
+                  <td>Life Time</td>
+                  <td><%= packagedetail.packagelife %></td>
+                </tr>
+                <tr>
+                  <td>Payment</td>
+                  <td><%= packagedetail.payment %></td>
+                </tr>
+                <tr>
+                  <td>Start Date</td>
+                  <td><%= packagedetail.startDate.toDateString() %></td>
+                </tr>
+                <tr>
+                  <td>Expire Date</td>
+                  <td><%= packagedetail.expireDate %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="transfer-detail">
+            <h1>Transfer Information</h1>
+            <div>
+              <div class="transfer-qrcode">
+                <img
+                  src="/img/qr_code_example_bitcoin.png"
+                  class="qrcode"
+                  alt=""
+                />
+              </div>
+              <div class="transfer-adddress">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Address</td>
+                      <td>3s5eg3s63e5465a3ftfd55d5gh5t5s3sadf4g68s4e8r6s</td>
+                    </tr>
+                    <tr>
+                      <td>Network</td>
+                      <td>Simple Network</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
