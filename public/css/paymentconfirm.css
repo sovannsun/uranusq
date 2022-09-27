@@ -298,127 +298,55 @@ main {
   margin-bottom: 1.6rem;
 }
 
-main .your-bot-cover {
-  width: 100%;
-  height: 200px;
+main .management {
   margin-top: 1rem;
-  border-radius: var(--border-radius-3);
-  background-image: url(/img/bitcoin-background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: var(--box-shadow);
 }
 
-main .your-bot-cover:hover {
-  box-shadow: none;
+main .management h2 {
+  margin-bottom: 0.8rem;
 }
 
-main .your-bot {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 1.6rem;
-  gap: 1.6rem;
-}
-
-.your-bot .bot-container {
+main .management table {
+  background-color: var(--color-white);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-white);
-  border-radius: var(--border-radius-3);
+  border-radius: var(--card-border-radius);
   padding: var(--card-padding);
+  text-align: center;
   box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
 }
 
-.your-bot .bot-container:hover {
+main .management table:hover {
   box-shadow: none;
 }
 
-.bot-container .bot-header {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+main table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant);
 }
 
-.toggle-switch .toggler {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 45px;
-  height: 25px;
-  background: var(--color-primary);
-  border-radius: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
+main table tbody tr:last-child td {
+  border: none;
 }
 
-.toggle-switch .toggler:before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: var(--color-white);
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 4px;
+main table tbody td span {
+  color: var(--color-primary);
 }
 
-.toggle-switch .toggler:checked:before {
-  left: 55%;
-}
-
-.bot-container .bot-name {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
+tbody td input {
+  width: 80px;
+  text-align: center;
+  padding: 3px 7px;
   border-radius: var(--border-radius-3);
-  padding: 10px 0px;
-  border: 1px solid var(--color-info-dark);
 }
 
-.input-container {
-  width: 100%;
-}
-
-.input-container form {
-  width: 100%;
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.input-container input {
-  width: 100%;
-  margin: 10px 0px;
-  padding: 10px 20px;
-  border-radius: var(--border-radius-2);
-  background: transparent;
-  border: 1px solid var(--color-info-dark);
-  color: var(--color-info-dark);
-}
-
-.input-container button {
-  background: var(--color-primary);
-  border-radius: var(--border-radius-3);
-  padding: 10px 15px;
-  margin-top: 15px;
+tbody td input[value="Pending"] {
+  background: var(--color-danger);
   color: var(--color-white);
-  transition: transform 0.3s ease-in-out;
 }
 
-.input-container button:hover {
-  transform: scale(1.1);
+tbody td input[value="Received"] {
+  background: var(--color-success);
+  color: var(--color-white);
 }

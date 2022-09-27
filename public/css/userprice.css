@@ -305,7 +305,7 @@ main .your-bot-cover {
   height: 200px;
   margin-top: 1rem;
   border-radius: var(--border-radius-3);
-  background-image: url(/img/bitcoin-background.png);
+  background-image: url(/img/bitcoin-background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -475,7 +475,7 @@ main .package-price {
 .card-footer .btn-get-now {
   background: var(--color-primary);
   color: var(--color-white);
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-radius: var(--border-radius-3);
   margin-top: 20px;
   margin-bottom: 10px;

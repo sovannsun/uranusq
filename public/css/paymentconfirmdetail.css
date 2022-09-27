@@ -298,127 +298,60 @@ main {
   margin-bottom: 1.6rem;
 }
 
-main .your-bot-cover {
+main .payment-confirm-detail {
   width: 100%;
-  height: 200px;
-  margin-top: 1rem;
-  border-radius: var(--border-radius-3);
-  background-image: url(/img/bitcoin-background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: var(--box-shadow);
-}
-
-main .your-bot-cover:hover {
-  box-shadow: none;
-}
-
-main .your-bot {
+  height: fit-content;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 1.6rem;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 1rem;
   gap: 1.6rem;
 }
 
-.your-bot .bot-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.payment-confirm-detail .payment-content {
   background: var(--color-white);
   border-radius: var(--border-radius-3);
-  padding: var(--card-padding);
+  padding: var(--padding-1);
   box-shadow: var(--box-shadow);
 }
 
-.your-bot .bot-container:hover {
+.payment-confirm-detail .payment-content:hover {
   box-shadow: none;
 }
 
-.bot-container .bot-header {
-  width: 100%;
-  height: fit-content;
+.payment-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-content div {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.toggle-switch .toggler {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 45px;
-  height: 25px;
-  background: var(--color-primary);
-  border-radius: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
-}
-
-.toggle-switch .toggler:before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: var(--color-white);
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 4px;
-}
-
-.toggle-switch .toggler:checked:before {
-  left: 55%;
-}
-
-.bot-container .bot-name {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: transparent;
-  border-radius: var(--border-radius-3);
-  padding: 10px 0px;
-  border: 1px solid var(--color-info-dark);
+  gap: 1.6rem;
 }
 
-.input-container {
-  width: 100%;
+div img {
+  width: auto;
+  height: 285px;
 }
 
-.input-container form {
-  width: 100%;
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+tbody tr {
+  font-size: 15px;
 }
 
-.input-container input {
-  width: 100%;
-  margin: 10px 0px;
-  padding: 10px 20px;
-  border-radius: var(--border-radius-2);
-  background: transparent;
-  border: 1px solid var(--color-info-dark);
-  color: var(--color-info-dark);
+tr .title {
+  padding-right: 20px;
 }
 
-.input-container button {
+#status {
+  color: var(--color-danger);
+  width: 80px;
+}
+
+form button {
   background: var(--color-primary);
-  border-radius: var(--border-radius-3);
-  padding: 10px 15px;
-  margin-top: 15px;
   color: var(--color-white);
-  transition: transform 0.3s ease-in-out;
-}
-
-.input-container button:hover {
-  transform: scale(1.1);
+  border-radius: var(--border-radius-3);
+  padding: 3px 10px;
+  margin-left: 10px;
 }

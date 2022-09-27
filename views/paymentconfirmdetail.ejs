@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information</title>
+    <!-- MATERIAL CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="/css/paymentconfirmdetail.css" />
+  </head>
+  <body>
+    <%- include('layout/navbar') %>
+    <!-- END OF NAVBAR -->
+    <div class="container">
+      <aside>
+        <div class="sidebar">
+          <a href="/admin/dashboard">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/admin/management">
+            <span class="material-icons-sharp">manage_accounts</span>
+            <h3>Management</h3>
+          </a>
+          <a href="/payment/confirmation" class="active">
+            <span class="material-icons-sharp">paid</span>
+            <h3>Payment</h3>
+            <span class="message-count"><%= paymentpending %></span>
+          </a>
+          <a href="/admin/billing">
+            <span class="material-icons-sharp">payments</span>
+            <h3>Billing</h3>
+          </a>
+          <a href="/admin/setting">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Setting</h3>
+          </a>
+          <a href="/admin/admin">
+            <span class="material-icons-sharp">admin_panel_settings</span>
+            <h3>Admin</h3>
+          </a>
+          <a href="/user/dashboard">
+            <span class="material-icons-sharp">manage_accounts</span>
+            <h3>User Account</h3>
+          </a>
+          <a href="/auth/user/logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF ASIDE -->
+      <main>
+        <h1>Payment Confirmation</h1>
+        <div class="payment-confirm-detail">
+          <div class="payment-content">
+            <h1>User Information</h1>
+            <div>
+              <div class="payment-slip">
+                <img src="<%= paymentconfirmationdata.image %>" />
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="title">Payment Confirmation ID :</td>
+                    <td><%= paymentconfirmationdata._id %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">User ID :</td>
+                    <td><%= paymentconfirmationdata.userid %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Username :</td>
+                    <td><%= paymentconfirmationdata.username %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Package Order Number :</td>
+                    <td><%= paymentconfirmationdata.ordernumber %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Package Name :</td>
+                    <td><%= paymentconfirmationdata.packagename %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Life Time :</td>
+                    <td><%= paymentconfirmationdata.lifetime %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Payment Method :</td>
+                    <td><%= paymentconfirmationdata.paymethod %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Amount of Payment :</td>
+                    <td><%= paymentconfirmationdata.amount %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Date of Payment :</td>
+                    <td><%= paymentconfirmationdata.date %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Time of Payment :</td>
+                    <td><%= paymentconfirmationdata.time %></td>
+                  </tr>
+                  <tr>
+                    <td class="title">Payment Confirmation Date :</td>
+                    <td>
+                      <%= paymentconfirmationdata.confirmDate.toDateString() %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="title">Status :</td>
+                    <td>
+                      <form action="/payment/confirmation/update" method="POST">
+                        <input
+                          type="hidden"
+                          name="id"
+                          value="<%= paymentconfirmationdata._id %>"
+                        />
+                        <input
+                          type="text"
+                          name="status"
+                          id="status"
+                          value="<%= paymentconfirmationdata.status %>"
+                        />
+                        <select id="status-change" onchange="ChangeValue()">
+                          <option>Select</option>
+                          <option value="Pending">Pending</option>
+                          <option value="Received">Received</option>
+                        </select>
+                        <button type="submit">Update</button>
+                      </form>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- END OF MAIN -->
+    </div>
+    <script src="/index.js"></script>
+    <script>
+      function ChangeValue() {
+        let updateStatus = document.getElementById("status-change").value;
+        document.getElementById("status").setAttribute("value", updateStatus);
+      }
+    </script>
+  </body>
+</html>

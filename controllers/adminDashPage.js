@@ -1,5 +1,6 @@
 const userData = require("../models/userData");
 const packageData = require("../models/packageData");
+const confirmPaymentData = require("../models/confirmPayment");
 
 module.exports = async (req, res) => {
   const allusers = await userData.find({}).count();
@@ -15,6 +16,12 @@ module.exports = async (req, res) => {
     .count();
   const FirstName = req.session.userFirsName;
   const userPosition = req.session.userPosition;
+  const paymentpending = await confirmPaymentData
+    .find({ status: "Pending" })
+    .count();
+  const receivedpayment = await confirmPaymentData
+    .find({ status: "Received" })
+    .count();
   if (req.session.userId && req.session.userPosition == "Admin") {
     return res.render("adminDash", {
       allusers,
@@ -26,6 +33,8 @@ module.exports = async (req, res) => {
       totalpackagesrejected,
       FirstName,
       userPosition,
+      paymentpending,
+      receivedpayment,
     });
   }
   res.redirect("/auth/login");

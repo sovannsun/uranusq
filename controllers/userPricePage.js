@@ -1,12 +1,12 @@
 const userData = require("../models/userData");
-const packageData = require("../models/packageData");
+const confirmPaymentData = require("../models/confirmPayment");
 
 module.exports = async (req, res) => {
   const UId = req.session.userId;
   const FirstName = req.session.userFirsName;
   const userPosition = req.session.userPosition;
-  const allwaitingpackage = await packageData
-    .find({ payment: "Waiting" })
+  const paymentpending = await confirmPaymentData
+    .find({ status: "Pending" })
     .count();
   const userprice = await userData.findById(req.params.id);
   if (req.session.userId) {
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
       UId,
       FirstName,
       userPosition,
-      allwaitingpackage,
+      paymentpending,
     });
   }
   res.redirect("/auth/login");

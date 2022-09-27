@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const userData = require("../models/userData");
+const logger = require("../config/logger");
 
 module.exports = (req, res) => {
   const { email, password } = req.body;
@@ -23,6 +24,7 @@ module.exports = (req, res) => {
           req.session.userHydraapikey = user.hydraapikey;
           req.session.userHydrasecretkey = user.hydrasecretkey;
           req.session.userStatus = user.status;
+          logger.info(req.session.userUsername);
           res.redirect("/user/dashboard");
         } else {
           res.redirect("/auth/login");

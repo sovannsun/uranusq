@@ -26,10 +26,14 @@
             <span class="material-icons-sharp">manage_accounts</span>
             <h3>Management</h3>
           </a>
+          <a href="/payment/confirmation">
+            <span class="material-icons-sharp">paid</span>
+            <h3>Payment</h3>
+            <span class="message-count"><%= paymentpending %></span>
+          </a>
           <a href="/admin/billing" class="active">
             <span class="material-icons-sharp">payments</span>
             <h3>Billing</h3>
-            <span class="message-count"><%= allwaitingpackage %></span>
           </a>
           <a href="/admin/setting">
             <span class="material-icons-sharp">settings</span>
@@ -52,7 +56,6 @@
       <!-- END OF ASIDE -->
       <main>
         <h1>Package Information</h1>
-        <div class="your-bot-cover"></div>
         <div class="user-detail">
           <div class="user-content">
             <h1>User Information</h1>
@@ -143,7 +146,6 @@
                       <input
                         type="hidden"
                         name="id"
-                        id="id"
                         value="<%= packagedetail._id %>"
                       />
                       <input
@@ -154,8 +156,8 @@
                       />
                       <select id="payment-change" onchange="ChangeValue()">
                         <option>Select</option>
+                        <option value="Waiting">Waiting</option>
                         <option value="Paid">Paid</option>
-                        <option value="Pending">Pending</option>
                         <option value="Rejected">Rejected</option>
                       </select>
                       <button type="submit">Update</button>

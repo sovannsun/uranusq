@@ -5,11 +5,11 @@ const logger = createLogger({
   transports: [
     new transports.MongoDB({
       level: "info",
-      db: "mongodb://localhost:27017/UranusQ",
+      db: "mongodb+srv://sovanndev:55557777@cluster0.xp3wr.mongodb.net/UranusQ",
       options: {
         useUnifiedTopology: true,
       },
-      collection: "UserLog",
+      collection: "userlog",
       format: format.combine(format.timestamp(), format.json()),
     }),
   ],

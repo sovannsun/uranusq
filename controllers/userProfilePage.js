@@ -1,5 +1,6 @@
 const userData = require("../models/userData");
 const packageData = require("../models/packageData");
+const confirmPaymentData = require("../models/confirmPayment");
 
 module.exports = async (req, res) => {
   const UId = req.session.userId;
@@ -8,8 +9,8 @@ module.exports = async (req, res) => {
   const userpackage = await packageData
     .find({ userid: req.session.userId })
     .populate("userid");
-  const allwaitingpackage = await packageData
-    .find({ payment: "Waiting" })
+  const paymentpending = await confirmPaymentData
+    .find({ status: "Pending" })
     .count();
   const userprofile = await userData.findById(req.params.id);
   if (req.session.userId) {
@@ -19,7 +20,7 @@ module.exports = async (req, res) => {
       FirstName,
       userPosition,
       userpackage,
-      allwaitingpackage,
+      paymentpending,
     });
   }
   res.redirect("/auth/login");

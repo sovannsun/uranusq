@@ -1,11 +1,12 @@
 const packageData = require("../models/packageData");
+const confirmPaymentData = require("../models/confirmPayment");
 
 module.exports = async (req, res) => {
   const UId = req.session.userId;
   const FirstName = req.session.userFirsName;
   const userPosition = req.session.userPosition;
-  const allwaitingpackage = await packageData
-    .find({ payment: "Waiting" })
+  const paymentpending = await confirmPaymentData
+    .find({ status: "Pending" })
     .count();
   const packagedetail = await packageData
     .findById(req.params.id)
@@ -15,7 +16,7 @@ module.exports = async (req, res) => {
       UId,
       FirstName,
       userPosition,
-      allwaitingpackage,
+      paymentpending,
       packagedetail,
     });
   }

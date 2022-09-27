@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
 require("dotenv").config;
+const fileUpload = require("express-fileupload");
 
 //Middleware
 const authMiddleware = require("./middleware/authMiddleware");
@@ -20,6 +21,8 @@ const settingPage = require("./controllers/settingPage");
 const adminPage = require("./controllers/adminPage");
 const userdetailpage = require("./controllers/userDetailPage");
 const packagedetailpage = require("./controllers/packageDetailPage");
+const paymentConfirmationPage = require("./controllers/paymentconfirmPage");
+const paymentConfirmationdetailPage = require("./controllers/paymentconfirmdetail");
 
 //User Dashboard Controllers
 const userDashboardPage = require("./controllers/userDashPage");
@@ -37,16 +40,24 @@ const userPackageStore = require("./controllers/userPackageStore");
 const userBotUpdate = require("./controllers/userBotUpdate");
 const packagetUpdate = require("./controllers/packageUpdate");
 const registerAlertPage = require("./controllers/registerAlertPage");
+const userConfirmPayment = require("./controllers/userConfirmPayment");
+const userBuyPackageAlert = require("./controllers/userbuypackagealert");
+const userConfirmAlert = require("./controllers/userconfirmalert");
+const paymentConfirmUpdate = require("./controllers/paymentconfirmupdate");
 
 //Connect to Database
-mongoose.connect("mongodb://localhost:27017/UranusQ", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://sovanndev:55557777@cluster0.xp3wr.mongodb.net/UranusQ",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(fileUpload());
 
 app.use(
   expressSession({
@@ -85,6 +96,12 @@ app.get("/admin/setting", settingPage);
 app.get("/admin/admin", adminPage);
 app.get("/user/detail/:id", authMiddleware, userdetailpage);
 app.get("/package/detail/:id", authMiddleware, packagedetailpage);
+app.get("/payment/confirmation", paymentConfirmationPage);
+app.get(
+  "/payment/confirmation/detail/:id",
+  authMiddleware,
+  paymentConfirmationdetailPage
+);
 
 //User Dashboard Router
 app.get("/user/dashboard", userDashboardPage);
@@ -102,6 +119,10 @@ app.post("/auth/package/store", authMiddleware, userPackageStore);
 app.post("/user/bot/update", authMiddleware, userBotUpdate);
 app.get("/alert/user/register", registerAlertPage);
 app.post("/user/package/update", authMiddleware, packagetUpdate);
+app.post("/user/confirm/payment", authMiddleware, userConfirmPayment);
+app.get("/user/buypackage/alert", authMiddleware, userBuyPackageAlert);
+app.get("/user/confirm/alert", authMiddleware, userConfirmAlert);
+app.post("/payment/confirmation/update", authMiddleware, paymentConfirmUpdate);
 
 app.use((req, res) => res.render("notfound"));
 

@@ -387,7 +387,7 @@ main .user-pricing {
 }
 
 .add-newcard button {
-  padding: 10px 25px;
+  padding: 10px 15px;
   color: var(--color-white);
   background: var(--color-primary);
   border-radius: var(--border-radius-3);

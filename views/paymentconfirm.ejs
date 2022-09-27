@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting</title>
+    <title>Payment Confirmation</title>
     <!-- MATERIAL CDN -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
       rel="stylesheet"
     />
     <!-- STYLESHEET-->
-    <link rel="stylesheet" href="/css/setting.css" />
+    <link rel="stylesheet" href="/css/paymentconfirm.css" />
   </head>
   <body>
     <%- include('layout/navbar') %>
@@ -27,7 +27,7 @@
             <span class="material-icons-sharp">manage_accounts</span>
             <h3>Management</h3>
           </a>
-          <a href="/payment/confirmation">
+          <a href="/payment/confirmation"  class="active">
             <span class="material-icons-sharp">paid</span>
             <h3>Payment</h3>
             <span class="message-count"><%= paymentpending %></span>
@@ -36,7 +36,7 @@
             <span class="material-icons-sharp">payments</span>
             <h3>Billing</h3>
           </a>
-          <a href="/admin/setting" class="active">
+          <a href="/admin/setting">
             <span class="material-icons-sharp">settings</span>
             <h3>Setting</h3>
           </a>
@@ -56,8 +56,37 @@
       </aside>
       <!-- END OF ASIDE -->
       <main>
-        <h1>Setting</h1>
-        <div class="setting"></div>
+        <h1>User Payment Confirmation</h1>
+        <div class="management">
+          <table>
+            <thead>
+              <tr>
+                <th>Payment ID</th>
+                <th>Username</th>
+                <th>Order Number</th>
+                <th>Package Name</th>
+                <th>Status</th>
+                <th>Lifetime</th>
+                <th>Amount</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let i=0; i<allconfirmlist.length; i++) { %> 
+              <tr>
+                <td><%= allconfirmlist[i]._id %></td>
+                <td><%= allconfirmlist[i].username %></td>
+                <td><%= allconfirmlist[i].ordernumber %></td>
+                <td><%= allconfirmlist[i].packagename %></td>
+                <td><input value="<%= allconfirmlist[i].status %>"></td>
+                <td><%= allconfirmlist[i].lifetime %></td>
+                <td><%= allconfirmlist[i].amount %></td>
+                <td><a href="/payment/confirmation/detail/<%= allconfirmlist[i]._id %>"><span class="material-icons-sharp">visibility</span></a></td>
+              </tr>
+              <% } %> 
+            </tbody>
+          </table>
+        </div>
       </main>
       <!-- END OF MAIN -->
     </div>

@@ -33,10 +33,14 @@
             <span class="material-icons-sharp">manage_accounts</span>
             <h3>Management</h3>
           </a>
+          <a href="/payment/confirmation">
+            <span class="material-icons-sharp">paid</span>
+            <h3>Payment</h3>
+            <span class="message-count"><%= paymentpending %></span>
+          </a>
           <a href="/admin/billing" class="active">
             <span class="material-icons-sharp">payments</span>
             <h3>Billing</h3>
-            <span class="message-count"><%= allwaitingpackage %></span>
           </a>
           <a href="/admin/setting">
             <span class="material-icons-sharp">settings</span>

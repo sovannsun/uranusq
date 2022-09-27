@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/logo.png" />
     <title>User Profile</title>
     <!-- MATERIAL CDN -->
     <link
@@ -39,7 +40,7 @@
           <a href="/admin/dashboard">
             <span class="material-icons-sharp">admin_panel_settings</span>
             <h3>Admin</h3>
-            <span class="message-count"><%= allwaitingpackage %></span>
+            <span class="message-count"><%= paymentpending %></span>
           </a>
           <% } %>
           <a href="/auth/user/logout">
@@ -149,31 +150,31 @@
             <table>
               <tbody>
                 <tr>
-                  <td>User ID</td>
+                  <td>User ID :</td>
                   <td><%= userprofile._id %></td>
                 </tr>
                 <tr>
-                  <td>First Name</td>
+                  <td>First Name :</td>
                   <td><%= userprofile.firstname %></td>
                 </tr>
                 <tr>
-                  <td>Last Name</td>
+                  <td>Last Name :</td>
                   <td><%= userprofile.lastname %></td>
                 </tr>
                 <tr>
-                  <td>Username</td>
+                  <td>Username :</td>
                   <td><%= userprofile.username %></td>
                 </tr>
                 <tr>
-                  <td>Email</td>
+                  <td>Email :</td>
                   <td><%= userprofile.email %></td>
                 </tr>
                 <tr>
-                  <td>Phone Number</td>
+                  <td>Phone Number :</td>
                   <td><%= userprofile.phone %></td>
                 </tr>
                 <tr>
-                  <td>Line ID</td>
+                  <td>Line ID :</td>
                   <td><%= userprofile.lineid %></td>
                 </tr>
               </tbody>
@@ -184,27 +185,27 @@
             <table>
               <tbody>
                 <tr>
-                  <td>RapterX Crypto Pairs</td>
+                  <td>RapterX Crypto Pairs :</td>
                   <td><%= userprofile.raptercryptopairs %></td>
                 </tr>
                 <tr>
-                  <td>RapterX Api Key</td>
+                  <td>RapterX Api Key :</td>
                   <td><%= userprofile.rapterapikey %></td>
                 </tr>
                 <tr>
-                  <td>RapterX Secret Key</td>
+                  <td>RapterX Secret Key :</td>
                   <td><%= userprofile.raptersecretkey %></td>
                 </tr>
                 <tr>
-                  <td>Hydra Crypto Pairs</td>
+                  <td>Hydra Crypto Pairs :</td>
                   <td><%= userprofile.hydracryptopairs %></td>
                 </tr>
                 <tr>
-                  <td>Hydra Api Key</td>
+                  <td>Hydra Api Key :</td>
                   <td><%= userprofile.hydraapikey %></td>
                 </tr>
                 <tr>
-                  <td>Hydra Secret Key</td>
+                  <td>Hydra Secret Key :</td>
                   <td><%= userprofile.hydrasecretkey %></td>
                 </tr>
               </tbody>

@@ -4,13 +4,13 @@ const Rapbotactive = document.getElementById("Rapbotactive");
 
 togglerRapterXBot.addEventListener("change", () => {
   if (togglerRapterXBot.checked) {
-    RapterXBot.innerHTML = `ON`;
+    RapterXBot.innerHTML = `Running`;
     Rapbotactive.style.background =
       "linear-gradient(90deg, rgba(2,170,176,1) 0%, rgba(0,205,172,1) 50%)";
     Rapbotactive.style.color = "#fff";
     Rapbotactive.style.border = "1px solid #fff";
   } else {
-    RapterXBot.innerHTML = `OFF`;
+    RapterXBot.innerHTML = `Inactive`;
     Rapbotactive.style.background = "";
     Rapbotactive.style.color = "";
     Rapbotactive.style.border = "";
@@ -23,13 +23,13 @@ const Hydrabotactive = document.getElementById("Hydrabotactive");
 
 togglerHydraBot.addEventListener("change", () => {
   if (togglerHydraBot.checked) {
-    HydraBot.innerHTML = `ON`;
+    HydraBot.innerHTML = `Running`;
     Hydrabotactive.style.background =
       "linear-gradient(90deg, rgba(2,170,176,1) 0%, rgba(0,205,172,1) 50%)";
     Hydrabotactive.style.color = "#fff";
     Hydrabotactive.style.border = "1px solid #fff";
   } else {
-    HydraBot.innerHTML = `OFF`;
+    HydraBot.innerHTML = `Inactive`;
     Hydrabotactive.style.background = "";
     Hydrabotactive.style.color = "";
     Hydrabotactive.style.border = "";

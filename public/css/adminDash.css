@@ -300,7 +300,7 @@ main {
 
 main .insights {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.6rem;
 }
 
@@ -325,15 +325,23 @@ main .insights > div span {
   font-size: 2rem;
 }
 
-main .insights > div.buy-package span {
+main .insights > div.received-payment span {
   background: var(--color-success);
 }
 
-main .insights > div.waiting-approve span {
+main .insights > div.total-paid-packages span {
+  background: var(--color-success);
+}
+
+main .insights > div.pending-payment span {
   background: var(--color-danger);
 }
 
-main .insights > div.package-rejected span {
+main .insights > div.waiting-approve-packages span {
+  background: var(--color-danger);
+}
+
+main .insights > div.packages-rejected span {
   background: red;
 }
 

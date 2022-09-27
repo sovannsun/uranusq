@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/logo.png" />
     <title>Bot Management</title>
     <!-- MATERIAL CDN -->
     <link
@@ -39,7 +40,7 @@
           <a href="/admin/dashboard">
             <span class="material-icons-sharp">admin_panel_settings</span>
             <h3>Admin</h3>
-            <span class="message-count"><%= allwaitingpackage %> </span>
+            <span class="message-count"><%= paymentpending %> </span>
           </a>
           <% } %>
           <a href="/auth/user/logout">
@@ -56,7 +57,7 @@
           <div class="bot-container">
             <div class="bot-header">
               <div class="onoff">
-                <p id="RapterXBot">OFF</p>
+                <p id="RapterXBot">Inactive</p>
               </div>
               <div class="toggle-switch">
                 <input type="checkbox" class="toggler" id="togglerRapterXBot" />
@@ -74,27 +75,30 @@
                   placeholder="Exchange"
                   name="raptercryptopairs"
                   value="<%= spacialData.raptercryptopairs %>"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Api Key"
                   name="rapterapikey"
                   value="<%= spacialData.rapterapikey %>"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Secret Key"
                   name="raptersecretkey"
                   value="<%= spacialData.raptersecretkey %>"
+                  required
                 />
-                <button type="submit">SAVE AND RUN</button>
+                <button type="submit">Save and Connect to Wallet</button>
               </form>
             </div>
           </div>
           <div class="bot-container">
             <div class="bot-header">
               <div class="onoff">
-                <p id="HydraBot">OFF</p>
+                <p id="HydraBot">Inactive</p>
               </div>
               <div class="toggle-switch">
                 <input type="checkbox" class="toggler" id="togglerHydraBot" />
@@ -112,20 +116,23 @@
                   placeholder="Exchange"
                   name="hydracryptopairs"
                   value="<%= spacialData.hydracryptopairs %>"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Api Key"
                   name="hydraapikey"
                   value="<%= spacialData.hydraapikey %>"
+                  required
                 />
                 <input
                   type="text"
                   placeholder="Secret Key"
                   name="hydrasecretkey"
                   value="<%= spacialData.hydrasecretkey %>"
+                  required
                 />
-                <button type="submit">SAVE AND RUN</button>
+                <button type="submit">Save and Connect to Wallet</button>
               </form>
             </div>
           </div>

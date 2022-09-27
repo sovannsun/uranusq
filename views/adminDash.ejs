@@ -27,10 +27,14 @@
             <span class="material-icons-sharp">manage_accounts</span>
             <h3>Management</h3>
           </a>
+          <a href="/payment/confirmation">
+            <span class="material-icons-sharp">paid</span>
+            <h3>Payment</h3>
+            <span class="message-count"><%= paymentpending %></span>
+          </a>
           <a href="/admin/billing">
             <span class="material-icons-sharp">payments</span>
             <h3>Billing</h3>
-            <span class="message-count"><%= allwaitingpackage %></span>
           </a>
           <a href="/admin/setting">
             <span class="material-icons-sharp">settings</span>
@@ -74,37 +78,57 @@
             </div>
           </div>
           <!-- END OF ADMIN -->
-          <div class="buy-package">
+          <div class="pending-payment">
+            <span class="material-icons-sharp">pending</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Pending Payment Review</h3>
+                <h1><%= paymentpending %></h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF PENDING PAYMENT REVIEW -->
+          <div class="received-payment">
+            <span class="material-icons-sharp">fact_check</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Received Payment</h3>
+                <h1><%= receivedpayment %></h1>
+              </div>
+            </div>
+          </div>
+          <!-- END OF RECEIVED PAYMENT -->
+          <div class="buy-packages">
             <span class="material-icons-sharp">shopping_cart</span>
             <div class="middle">
               <div class="left">
-                <h3>Buy Package</h3>
+                <h3>Buy Packages</h3>
                 <h1><%= allpackage %></h1>
               </div>
             </div>
           </div>
           <!-- END OF BUY PACKAGE -->
-          <div class="waiting-approve">
+          <div class="waiting-approve-packages">
             <span class="material-icons-sharp">fact_check</span>
             <div class="middle">
               <div class="left">
-                <h3>Waiting Approve</h3>
+                <h3>Waiting Approve Packages</h3>
                 <h1><%= allwaitingpackage %></h1>
               </div>
             </div>
           </div>
           <!-- END OF WAITING APPROVE -->
-          <div class="total-paid">
+          <div class="total-paid-packages">
             <span class="material-icons-sharp">paid</span>
             <div class="middle">
               <div class="left">
-                <h3>Total Paid</h3>
+                <h3>Total Paid Packages</h3>
                 <h1><%= totalpaidpackages %></h1>
               </div>
             </div>
           </div>
           <!-- END OF TOTAL PAID -->
-          <div class="package-rejected">
+          <div class="packages-rejected">
             <span class="material-icons-sharp">swipe_left</span>
             <div class="middle">
               <div class="left">

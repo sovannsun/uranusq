@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/img/logo.png" />
     <title>User Package Details</title>
     <!-- MATERIAL CDN -->
     <link
@@ -39,7 +40,7 @@
           <a href="/admin/dashboard">
             <span class="material-icons-sharp">admin_panel_settings</span>
             <h3>Admin</h3>
-            <span class="message-count"><%= allwaitingpackage %></span>
+            <span class="message-count"><%= paymentpending %></span>
           </a>
           <% } %>
           <a href="/auth/user/logout">
@@ -57,59 +58,55 @@
             <table>
               <tbody>
                 <tr>
-                  <td>User ID</td>
+                  <td>User ID :</td>
                   <td><%= packagedetail.userid._id %></td>
                 </tr>
                 <tr>
-                  <td>First Name</td>
+                  <td>First Name :</td>
                   <td><%= packagedetail.userid.firstname %></td>
                 </tr>
                 <tr>
-                  <td>Last Name</td>
+                  <td>Last Name :</td>
                   <td><%= packagedetail.userid.lastname %></td>
                 </tr>
                 <tr>
-                  <td>Username</td>
+                  <td>Username :</td>
                   <td><%= packagedetail.userid.username %></td>
                 </tr>
                 <tr>
-                  <td>Email</td>
+                  <td>Email :</td>
                   <td><%= packagedetail.userid.email %></td>
                 </tr>
                 <tr>
-                  <td>Phone Number</td>
+                  <td>Phone Number :</td>
                   <td><%= packagedetail.userid.phone %></td>
                 </tr>
                 <tr>
-                  <td>Line ID</td>
+                  <td>Line ID :</td>
                   <td><%= packagedetail.userid.lineid %></td>
                 </tr>
-              </tbody>
-            </table>
-            <table>
-              <tbody>
                 <tr>
-                  <td>Order Number</td>
+                  <td>Order Number :</td>
                   <td><%= packagedetail._id %></td>
                 </tr>
                 <tr>
-                  <td>Package</td>
+                  <td>Package :</td>
                   <td><%= packagedetail.package %></td>
                 </tr>
                 <tr>
-                  <td>Life Time</td>
+                  <td>Life Time :</td>
                   <td><%= packagedetail.packagelife %></td>
                 </tr>
                 <tr>
-                  <td>Payment</td>
+                  <td>Payment :</td>
                   <td><%= packagedetail.payment %></td>
                 </tr>
                 <tr>
-                  <td>Start Date</td>
+                  <td>Start Date :</td>
                   <td><%= packagedetail.startDate.toDateString() %></td>
                 </tr>
                 <tr>
-                  <td>Expire Date</td>
+                  <td>Expire Date :</td>
                   <td><%= packagedetail.expireDate %></td>
                 </tr>
               </tbody>
@@ -117,27 +114,227 @@
           </div>
           <div class="transfer-detail">
             <h1>Transfer Information</h1>
-            <div>
-              <div class="transfer-qrcode">
-                <img
-                  src="/img/qr_code_example_bitcoin.png"
-                  class="qrcode"
-                  alt=""
-                />
+            <div class="tabs">
+              <div class="tabs-head">
+                <div class="tabs-toggle is-active">
+                  <span class="tabs-name">Pay by Crypto</span>
+                </div>
+                <div class="tabs-toggle">
+                  <span class="tabs-name">Pay via Bank Transfer</span>
+                </div>
+                <div class="tabs-toggle">
+                  <span class="tabs-name">Confirm Your Payment</span>
+                </div>
               </div>
-              <div class="transfer-adddress">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Address</td>
-                      <td>3s5eg3s63e5465a3ftfd55d5gh5t5s3sadf4g68s4e8r6s</td>
-                    </tr>
-                    <tr>
-                      <td>Network</td>
-                      <td>Simple Network</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="tabs-body">
+                <div class="tabs-content is-active">
+                  <div>
+                    <div class="transfer-qrcode">
+                      <img
+                        src="/img/qr_code_example_bitcoin.png"
+                        class="qrcode"
+                        alt=""
+                      />
+                    </div>
+                    <div class="transfer-adddress">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="title">Coin :</td>
+                            <td>BUSD</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Network :</td>
+                            <td>BSC BNB Smart Chain (BEP20)</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Address :</td>
+                            <td>
+                              3s5eg3s63e5465a3ftfd55d5gh5t5s3sadf4g68s4e8r6s
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <p class="padding">
+                                * Send only BUSD to this deposit address
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                              <p>
+                                * Ensure the network is BSC BNB Smart Chain
+                                (BEP20)
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tabs-content">
+                  <div>
+                    <div class="transfer-qrcode">
+                      <img src="/img/KBANK.BK.png" class="qrcode" alt="" />
+                    </div>
+                    <div class="transfer-adddress">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="title">Bank Name :</td>
+                            <td>Kasikorn Bank</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Bank Branch :</td>
+                            <td>Robinson Chachoengsao</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Account Name :</td>
+                            <td>Betatech Technology Co., Ltd.</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Account Type :</td>
+                            <td>Savings</td>
+                          </tr>
+                          <tr>
+                            <td class="title">Account Number :</td>
+                            <td>119-2-59112-7</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="tabs-content">
+                  <form
+                    action="/user/confirm/payment"
+                    method="POST"
+                    enctype="multipart/form-data"
+                  >
+                    <div>
+                      <table class="table-margin">
+                        <tbody>
+                          <tr>
+                            <td class="title">User ID :</td>
+                            <td>
+                              <%= packagedetail.userid._id %>
+                              <input
+                                type="hidden"
+                                name="userid"
+                                value="<%= packagedetail.userid._id %>"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Username :</td>
+                            <td>
+                              <%= packagedetail.userid.username %>
+                              <input
+                                type="hidden"
+                                name="username"
+                                value="<%= packagedetail.userid.username %>"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Order Number :</td>
+                            <td>
+                              <%= packagedetail._id %>
+                              <input
+                                type="hidden"
+                                name="ordernumber"
+                                value="<%= packagedetail._id %>"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Package :</td>
+                            <td>
+                              <%= packagedetail.package %>
+                              <input
+                                type="hidden"
+                                name="packagename"
+                                value="<%= packagedetail.package %>"
+                                required
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Life Time :</td>
+                            <td>
+                              <%= packagedetail.packagelife %>
+                              <input
+                                type="hidden"
+                                name="lifetime"
+                                value="<%= packagedetail.packagelife %>"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="title">Payment Method :</td>
+                            <td>
+                              <select name="paymethod" required>
+                                <option value="Pay by Crypto">
+                                  Pay by Crypto
+                                </option>
+                                <option value="Pay via Bank Transfer">
+                                  Pay via Bank Transfer
+                                </option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Transfer Amount :</td>
+                            <td>
+                              <input
+                                type="text"
+                                name="amount"
+                                required
+                                class="input-border"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Transfer Date :</td>
+                            <td>
+                              <input
+                                type="date"
+                                name="date"
+                                required
+                                class="input-border"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Transfer Time :</td>
+                            <td>
+                              <input
+                                type="time"
+                                name="time"
+                                required
+                                class="input-border"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="title">Proof of Payment :</td>
+                            <td>
+                              <input type="file" name="image" required />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <input type="hidden" name="status" value="Pending" />
+                    </div>
+                    <button type="submit">Confirm Payment</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -146,5 +343,6 @@
       <!-- END OF MAIN -->
     </div>
     <script src="/index.js"></script>
+    <script src="/transfermethod.js"></script>
   </body>
 </html>
